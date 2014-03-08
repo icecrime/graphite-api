@@ -16,7 +16,7 @@ from flask import request
 
 
 def is_pattern(s):
-    return '*' in s or '?' in s or '[' in s or '{' in s
+    return any(c in ('*?[{') for c in s)
 
 
 class RequestParams(object):
